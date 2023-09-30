@@ -6,7 +6,7 @@ Fully customizable floating bottom navigation package for flutter.
 ## 🎮 How To Use
 
 ```dart
-    import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:simple_floating_bottom_nav_bar/floating_bottom_nav_bar.dart';
 import 'package:simple_floating_bottom_nav_bar/floating_item.dart';
 
