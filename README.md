@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 
-<img width="450" height="900" src="https://drive.google.com/file/d/1JkfIPzH-qwO6LrJ1ZvoYVGHgxg37Wwhb/view?usp=drivesdk">
+<img width="450" height="900" src="https://github.com/Strange-Philip/simple_floating_bottom_nav_bar/blob/main/images/floating.gif">
 
 ### ❗️ Note
 
