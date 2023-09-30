@@ -23,7 +23,7 @@ class FloatingBottomNavBar extends StatefulWidget {
       this.backgroundColor = Colors.blue,
       this.height = 65,
       this.width = 300,
-      this.bottomPadding = 15,
+      this.bottomPadding = 5,
       required this.items,
       this.selectedLabelStyle,
       this.unselectedLabelStyle});
@@ -70,12 +70,18 @@ class _FloatingBottomNavBarState extends State<FloatingBottomNavBar> {
             elevation: widget.elevation,
             type: BottomNavigationBarType.fixed,
             currentIndex: selectedIndex,
+            unselectedFontSize: widget.items.any((element) => element.label == null)
+                ? 0
+                : widget.unselectedLabelStyle?.fontSize ?? 14,
+            selectedFontSize: widget.items.any((element) => element.label == null)
+                ? 0
+                : widget.selectedLabelStyle?.fontSize ?? 14,
             selectedLabelStyle: widget.selectedLabelStyle,
             unselectedLabelStyle: widget.unselectedLabelStyle,
             onTap: onItemTapped,
             items: widget.items
                 .map((item) => BottomNavigationBarItem(
-                    icon: item.inactiveIcon, activeIcon: item.activeIcon, label: item.label))
+                    icon: item.inactiveIcon, activeIcon: item.activeIcon, label: item.label ?? ''))
                 .toList(),
           )),
     );

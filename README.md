@@ -6,31 +6,94 @@ Fully customizable floating bottom navigation package for flutter.
 ## 🎮 How To Use
 
 ```dart
-    Scaffold(
-          appBar: AppBar(
-            title: Text('Example'),
-          ),
-          //If you want to show body behind the navbar, it should be true
-          extendBody: true,
-          bottomNavigationBar: FloatingNavbar(
-            onTap: (int val) {
-              //returns tab id which is user tapped
-            },
-            currentIndex: 0,
-            items: [
-              FloatingNavbarItem(icon: Icons.home, title: 'Home'),
-              FloatingNavbarItem(icon: Icons.explore, title: 'Explore'),
-              FloatingNavbarItem(icon: Icons.chat_bubble_outline, title: 'Chats'),
-              FloatingNavbarItem(icon: Icons.settings, title: 'Settings'),
-            ],
-          ),
-          
-        );
+    import 'package:flutter/material.dart';
+import 'package:simple_floating_bottom_nav_bar/floating_bottom_nav_bar.dart';
+import 'package:simple_floating_bottom_nav_bar/floating_item.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: 'Simple Floating NavBar Demo',
+      home:  MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  List<FloatingBottomNavItem> bottomNavItems = const [
+    FloatingBottomNavItem(
+      inactiveIcon: Icon(Icons.home_outlined),
+      activeIcon: Icon(Icons.home),
+      label: "Home",
+    ),
+    FloatingBottomNavItem(
+      inactiveIcon: Icon(Icons.search_outlined),
+      activeIcon: Icon(Icons.search),
+      label: "Search",
+    ),
+    FloatingBottomNavItem(
+      inactiveIcon: Icon(Icons.add_circle_outline),
+      activeIcon: Icon(Icons.add_circle),
+      label: "Add",
+    ),
+    FloatingBottomNavItem(
+      inactiveIcon: Icon(Icons.person_outline),
+      activeIcon: Icon(Icons.person),
+      label: "Profile",
+    ),
+  ];
+
+  List<Widget> pages = [
+    Container(
+      color: Colors.red,
+    ),
+    Container(
+      color: Colors.purple,
+    ),
+    Container(
+      color: Colors.blue,
+    ),
+    Container(
+      color: Colors.yellow,
+    ),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return FloatingBottomNavBar(
+      pages: pages,
+      items: bottomNavItems,
+      initialPageIndex: 0,
+      backgroundColor: Colors.green,
+      bottomPadding: 10,
+      elevation: 0,
+      radius: 20,
+      width: 300,
+      height: 65,
+    );
+  }
+}
+
 
 ```
 
 
-<img width="450" height="900" src="https://drive.google.com/file/d/1JkfIPzH-qwO6LrJ1ZvoYVGHgxg37Wwhb/view?usp=drive_link">
+<img width="450" height="900" src="images/floating.gif">
 
 ### ❗️ Note
 
