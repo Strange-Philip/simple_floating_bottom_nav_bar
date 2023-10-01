@@ -1,3 +1,3 @@
-## 0.0.1
+## 0.0.2
 
-* TODO: Describe initial release.
+* TODO: Simple editable floating bottom navigation bar for flutter.
