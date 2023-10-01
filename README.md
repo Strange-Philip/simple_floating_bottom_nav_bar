@@ -1,7 +1,7 @@
 # ✨ Simple Floating Bottom Navigation Bar
 
 
-Fully customizable floating bottom navigation package for flutter.
+Fully customizable Simple floating bottom navigation bar package for flutter.
 
 ## 🎮 How To Use
 

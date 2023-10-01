@@ -1,3 +1,3 @@
-## 0.0.2
+## 0.0.3
 
-* TODO: Simple editable floating bottom navigation bar for flutter.
+* TODO: Reamdme updates.
